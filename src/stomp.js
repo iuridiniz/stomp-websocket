@@ -87,6 +87,9 @@
         if (onreceive) {
           onreceive(frame);
         }
+        if (that.onreceive) {
+          that.onreceive(frame);
+        }
       } else if (frame.command === "RECEIPT" && that.onreceipt) {
         that.onreceipt(frame);
       } else if (frame.command === "ERROR" && that.onerror) {
