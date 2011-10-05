@@ -107,8 +107,7 @@
 
     that.connect = function(login_, passcode_, connectCallback, errorCallback) {
       debug("Opening Web Socket...");
-      var Socket = "MozWebSocket" in window ? MozWebSocket : WebSocket;
-      ws = new Socket(url);
+      ws = new WebSocket(url);
       ws.onmessage = onmessage;
       ws.onclose   = function() {
         var msg = "Whoops! Lost connection to " + url;
